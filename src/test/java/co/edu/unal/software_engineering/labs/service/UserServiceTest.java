@@ -95,20 +95,20 @@ public class UserServiceTest{
         user.setNames( "   " );
         user.setSurnames( "Test" );
         assertFalse( userService.isRightUser( user ) );
-
+// False test
         user.setSurnames( "   " );
         user.setPassword( "Test" );
-        assertFalse( userService.isRightUser( user ) );
+        assertTrue( userService.isRightUser( user ) );
 
         user.setPassword( "   " );
         user.setUsername( "Test" );
-        assertFalse( userService.isRightUser( user ) );
+        assertTrue( userService.isRightUser( user ) );
 
         user.setNames( "Test" );
         user.setSurnames( "Test" );
         user.setPassword( "Test" );
         user.setUsername( "Test" );
-        assertTrue( userService.isRightUser( user ) );
+        assertFalse( userService.isRightUser( user ) );
     }
 
 }
